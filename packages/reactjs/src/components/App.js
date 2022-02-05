@@ -5,6 +5,7 @@ import { ethers } from 'ethers';
 import { useState, useEffect } from 'react'
 
 function App() {
+
   const initialInfo = {
     connected: false,
     status: null,
@@ -12,7 +13,13 @@ function App() {
     contract: null
   };
 
+  const initialPortfolio = {
+    loading: false,
+    list: []
+  }
+
   const [info, setInfo] = useState(initialInfo);
+  const [portfolio, setPortfolio] = useState(initialPortfolio);
   
   const init = async () => {
     if (window.ethereum?.isMetaMask) {
@@ -44,7 +51,13 @@ function App() {
     console.log("Yeah!!!!!");
   };
 
-  console.log(info);
+  const getDrops = async () => {
+    info.contract.tokenOfOwnerByIndex("0x2272ecf43a7481088fa2d4ba9109804ed5a31901", 0).then((res) => {
+      console.log(res.toString());
+    }).catch((err) => {
+      console.log(err);
+    });
+  };
 
   const initOnChanged = () => {
     if (window.ethereum) {
@@ -62,10 +75,15 @@ function App() {
     initOnChanged();
   }, []);
 
+  console.log(123);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <div> 111
+          <button onClick={() => getDrops()}>Get My NFT</button>
+        </div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/1/grainyheroes/packages/hardhat/contracts/GrainyHeroes.sol": {
+      "lastModificationDate": 1644070505947,
+      "contentHash": "69ecaab9e0ab5281937d87b9937476fa",
+      "sourceName": "contracts/GrainyHeroes.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GrainyHeroes",
+        "IERC721"
+      ]
+    }
+  }
+}
